@@ -1,0 +1,11 @@
+#!/bin/sh
+
+. /etc/update-motd.d/quiet
+. /etc/update-motd.d/colors
+ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+
+------------------------------------------------------------------------------
+Welcome to the Proxmox Virtual Environment by OPENCLOUD.SOFTWARE. Please use your web browser to 
+configure this server - connect to:
+https://$ip:8006/
+------------------------------------------------------------------------------
